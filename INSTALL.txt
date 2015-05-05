@@ -1,0 +1,6 @@
+Gov 2.0 StarterKit - Installation
+
+Prosedur Instalasi:
+[1] Siapkan sebuah domain yang sudah bisa diakses melalui web.
+[2] Extract file hasil download, contoh jika menggunakan linux: tar -xzvf Gov2StarterKit_x.x.x.tar.gz
+[3] Buka URL /index.php di browser Anda maka seharusnya sudah terlihat halaman depan Gov 2.0 StarterKit

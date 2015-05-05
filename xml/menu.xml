@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mainmenu>
+	<menu>
+        <menu_id>1</menu_id>
+		<caption>Home</caption>
+		<url>index.php</url>
+	</menu>
+	<menu>
+        <menu_id>2</menu_id>
+		<caption>e-Commerce</caption>
+		<url>ecom.php</url>
+	</menu>
+	<menu>
+        <menu_id>3</menu_id>
+		<caption>Backlog</caption>
+		<url>backlog.php</url>
+	</menu>
+</mainmenu>

@@ -1,0 +1,46 @@
+Manifest, StarterKit Gov 2.0 v 0.0.1
+
+Terdapat dua modul yang terpisah, modul layanan membership Single Account Gov 2.0 dan modul framework sederhana.
+
+Modul Single Account Gov 2.0 berfungsi sebagai modul otentikasi login ke Platform Gov 2.0
+
+./gov2login.php
+./gov2model.php
+./gov2view.php
+./gov2member.xml
+
+Simple Framework Gov 2.0 berfungsi sebagai modul aplikasi antara muka pengguna dengan layanan Platform Gov 2.0. Modul ini dapat diintegrasikan dengan framework yang lain seperti Codeigniter, CakePHP, Drupal atau framework manapun selama bisa memahami cara kerjanya.
+
+Modul ini berisi 3 subfolder yang ditempatkan di folder root web semua hanya untuk kemudahan instalasi. Untuk meningkatkan keamanan subfolder-subfolder penting dapat dipidah ke luar root web agar tidak dapat diakses dari browser. Folder-folder tersebut adalah:
+
+./xml/ berisi file-file data dalam format xml
+./modul/ berisi file library
+./view/ berisi file-file template
+
+Kemudian pada root web selain 4 file gov2*.php di atas juga terdapat file-file sebagai berikut
+
+./INSTALL.txt file petunjuk instalasi
+./README.txt file perihal aplikasi ini
+./MANIFEST.txt file yang sedang Anda baca
+
+./index.php file Home / Beranda
+./login.php file untuk menampilkan login/profile
+./backlog.php file untuk menampilkan dokumentasi pengembangan aplikasi ini
+./ecom.php file antara muka layanan Gov 2.0
+
+Folder ./xml/
+./xml/config.xml
+./xml/menu.xml
+./xml/text.xml
+./xml/backlog.xml
+
+Folder ./model/
+./model/document.php
+
+Folder ./view/
+./view/body.php template utama
+./view/head.php bagian header, file-file css dan js diset di file ini
+./view/topbar.php bagian atas dari template utama
+./view/sidebar.php bagian menu 
+./view/service.php template interface ke layanan Gov 2.0
+./view/webclient.php bagian interface ke layanan Gov 2.0

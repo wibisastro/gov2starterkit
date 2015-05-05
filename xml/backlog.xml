@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<backlog>
+    <title>Product Backlog</title>
+	<sprint>
+        <icon>fa fa-check</icon>
+        <icontype>event-icon-success</icontype>
+        <version>1.8.10</version>
+        <side>on-right</side>
+        <person>Indu</person>
+        <date>27-04-2015</date>
+        <caption>Rilis Perdana</caption>
+        <story><![CDATA[
+Rilis perdana dengan value untuk penjual dapat mempersiapkan produk-produknya. Fitur yang tersedia adalah:
+<ul>
+<li>Login/Logout/Signup</li>
+<li>Lupa/Ganti Password</li>
+<li>Product Display</li>
+<li>Product Management</li>
+</ul>
+Fitur yang diharapkan ada pada rilis selanjutnya adalah:
+<ul>
+<li>Shopping Cart</li>
+<li>Order Management</li>
+</ul>
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-gears</icon>
+        <icontype>event-icon-gray</icontype>
+        <version>0.8.9</version>
+        <side>on-left</side>
+        <person>-</person>
+        <date></date>
+        <caption>Manage Product</caption>
+        <progress>10</progress>
+        <testtype>system</testtype>
+        <story><![CDATA[
+        <h4>Dependencies</h4>
+        <ul><li>0.8.5</li><li>0.8.7</li></ul>
+        <h4>Pre-condition</h4>
+        <ul><li>Login sebagai Penjual</li><li>Belum Punya Produk</li></ul>
+        <h4>Source</h4>
+        <pre><a href="http://qranafunstuff.web.id/admin/product.php" target="_blank">http://qranafunstuff.web.id/admin/product.php</a></pre>    
+        <h4>Sequence</h4>
+<div class=wsd wsd_style="modern-blue"><pre>
+User->System: URL /admin
+User->Flickr: upload images
+note right of Flickr 
+    sets 
+    resize
+    tags
+end note
+Flickr->System: thumbnails
+note right of System 
+    gallery 
+end note
+System->User: Admin Product
+User->System: add/edit product
+note left of System  
+    form
+end note
+System->User: popup
+note left of User 
+    ubah 
+    isi 
+    form
+end note
+User->System: click Save
+note right of System
+    update 
+    product
+end note
+System->User: refresh list
+</pre></div>
+        <h4>Post-condition</h4>
+        <ul><li>Login sebagai Pembeli</li><li>Belum Punya Produk</li></ul>
+      ]]></story>
+	</sprint>
+    	<sprint>
+        <icon>fa fa-exclamation</icon>
+        <icontype>event-icon-danger</icontype>
+        <version>0.8.8</version>
+        <side>on-left</side>
+        <person>Wibi</person>
+        <date></date>
+        <caption>Link Home</caption>
+        <progress>100</progress>
+        <testtype>solved</testtype>
+        <story><![CDATA[
+Link Home di halaman depan masih ada yang ke index.html yaitu link di breadcrumb dan link Home paling atas.
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-gears</icon>
+        <icontype>event-icon-testing</icontype>
+        <version>0.8.7</version>
+        <side>on-left</side>
+        <person>Vijay</person>
+        <date></date>
+        <caption>Update Product</caption>
+        <progress>100</progress>
+        <testtype>function</testtype>
+        <story><![CDATA[
+        <h4>Dependencies</h4>
+        <ul><li>0.8.5</li></ul>
+        <h4>Pre-condition</h4>
+        <ul><li>Sudah login</li></ul>
+        <h4>Source</h4>
+        <pre><a href="http://qranafunstuff.web.id/admin/product.php" target="_blank">http://qranafunstuff.web.id/admin/product.php</a></pre>    
+        <h4>Sequence</h4>
+<div class=wsd wsd_style="modern-blue"><pre>
+User->System: click URL
+System->User: Product Table
+User->System: click Edit Icon
+System->User: Prefilled Product Form
+note left of System 
+    popup 
+    form
+end note
+note left of User 
+    ubah 
+    isi 
+    form
+end note
+User->System: click Save
+note right of System
+    update 
+    product
+end note
+System->User: refresh list
+</pre></div>
+      ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-edit</icon>
+        <icontype>event-icon-gray</icontype>
+        <version>0.8.6</version>
+        <side>on-left</side>
+        <person>-</person>
+        <progress>50</progress>
+        <testtype>weight</testtype>
+        <caption>Update Product</caption>
+        <story><![CDATA[
+        <h4>SQL</h4>
+Bahasa SQL yang digunakan di sini adalah contoh yang ditulis lengkap untuk memberitahu programmer field apa saja yang perlu diperhatikan. Instruksi yang digunakan sebenarnya pada script boleh berbeda untuk efisiensi coding.
+<pre>
+SQL query: 
+UPDATE  `product` 
+SET  title =  '$title', 
+status = '$status',
+description =  '$description' 
+WHERE  product_id =$product_id;
+</pre>
+        <h4>Note</h4>
+        <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Field</th>
+                <th>Info</th>
+            </tr>       
+            <tr>
+                <td>image_1 - image_5</td>
+                <td>untuk menampilkan yang dipilih sebelumnya gunakan <i>selected</i> pada listbox</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td>mungkin akan lebih baik jika untuk ubah status ada case tersendiri?</td>
+            </tr>
+        </tbody>
+        </table>
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-exclamation</icon>
+        <icontype>event-icon-testing</icontype>
+        <version>0.8.5</version>
+        <side>on-left</side>
+        <person>Vijay</person>
+        <date></date>
+        <caption>Add Product</caption>
+        <progress>50</progress>
+        <testtype>function</testtype>
+        <story><![CDATA[
+        <h4>Pre-condition</h4>
+        <ul><li>Sudah login</li><li>Jumlah produk yang belum bertambah</li></ul>
+        <h4>Source</h4>
+        <pre><a href="http://www.qranafunstuff.web.id/admin/product.php" target="_blank">http://www.qranafunstuff.web.id/admin/product.php</a></pre>    
+        <h4>Sequence</h4>
+<div class=wsd wsd_style="modern-blue"><pre>
+User->System: click URL
+System->User: Product Table
+User->System: click Add Product
+System->User: Product Form
+note left of System: popup form
+note left of User: isi form
+User->System: click Submit
+note right of System: insert product
+System->User: refresh list
+</pre></div>
+        <h4>Post-condition</h4>
+        <ul><li>Jumlah produk bertambah satu dan berada di paling atas</li></ul>
+      ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-exclamation</icon>
+        <icontype>event-icon-primary</icontype>
+        <version>0.8.4</version>
+        <side>on-left</side>
+        <person>Hafidz</person>
+        <progress>50</progress>
+        <testtype>weight</testtype>
+        <caption>Add Product</caption>
+        <story><![CDATA[
+        <h4>SQL</h4>
+Bahasa SQL yang digunakan di sini adalah contoh yang ditulis lengkap untuk memberitahu programmer field apa saja yang perlu diperhatikan. Instruksi yang digunakan sebenarnya pada script boleh berbeda untuk efisiensi coding.
+<pre>
+INSERT INTO `product` (`product_id`, 
+`cat_id`, `account_id`, `site_id`, `supplier_id`, 
+`title`, 
+`image_1`, `image_2`, `image_3`, `image_4`, `image_5`, 
+`description`, `brand_name`, `stock`, `sold`, 
+`discount`, `price`, `status`, `insert_date`) 
+VALUES (null, $cat_id, $accound_id, 0, 0, 
+'Judul', 
+$photo_id[0], $photo_id[1], 0, 0, 0, 
+'Keterangan\r\nProduk', '', 5, 0, 0, 0, 'displayed', NOW(''));
+</pre>
+        <h4>Note</h4>
+        <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Field</th>
+                <th>Info</th>
+            </tr>
+            <tr>
+                <td>cat_id</td>
+                <td>ambil dari form</td>
+            </tr>
+            <tr>
+                <td>account_id;</td>
+                <td>ambil dari session yang login</td>
+            </tr>
+            <tr>
+                <td>supplier_id</td>
+                <td>sementara belum ada</td>
+            </tr>          
+            <tr>
+                <td>site_id</td>
+                <td>untuk kepentingan cloud service, jadi sementara kosongin dulu</td>
+            </tr>
+            <tr>
+                <td>image_1 - image_5</td>
+                <td>ambil dari gallery yang sudah dalam bentuk listbox yang ketika di ambil dari variable $_POST dalam bentuk array. isinya adalah photo_id yang nanti digunakan untuk menampilkan thumbnail</td>
+            </tr>
+            <tr>
+                <td>status</td>
+                <td>mana lebih baik defaultnya displayed atau hidden?</td>
+            </tr>
+        </tbody>
+        </table>
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-exclamation</icon>
+        <icontype>event-icon-testing</icontype>
+        <version>0.8.3</version>
+        <side>on-left</side>
+        <person>Vijay</person>
+        <date></date>
+        <caption>Add Product Form</caption>
+        <progress>100</progress>
+        <testtype>function</testtype>
+        <story><![CDATA[
+        <h4>Request</h4>
+        <pre><a href="http://www.qranafunstuff.web.id/admin/product.php?cmd=test_add" target="_blank">http://www.qranafunstuff.web.id/admin/product.php?cmd=test_add</a></pre>
+        <pre><a href="http://www.qranafunstuff.web.id/admin/product.php?cmd=test_addimage" target="_blank">http://www.qranafunstuff.web.id/admin/product.php?cmd=test_addimage</a></pre>
+        <h4>Response</h4>
+       Skenario pertama akan menampilkan form isian produk, tanpa daftar gambar foto. Skenario kedua menampilkan dua-duanya, daftar gambar foto-foto yang mau dimuat dan form isian produk.
+      ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-exclamation</icon>
+        <icontype>event-icon-primary</icontype>
+        <version>0.8.2</version>
+        <side>on-left</side>
+        <person>Wibi dan Hafidz</person>
+        <progress>40</progress>
+        <testtype>weight</testtype>
+        <caption>Add Product Form</caption>
+        <story><![CDATA[
+Menampilkan form isian untuk menambah produk.
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-smile-o</icon>
+        <icontype>event-icon-success</icontype>
+        <version>0.8.1</version>
+        <side>on-left</side>
+        <person>Wibi</person>
+        <date>20-04-2015</date>
+        <caption>Sprint Goal</caption>
+        <story><![CDATA[
+Menyelesaikan Technical Debt pada Sprint sebelumnya dan menyempurnakan bagian Product untuk persiapan rilis perdana.
+        ]]></story>
+	</sprint>  
+	<sprint>
+        <icon>fa fa-exclamation</icon>
+        <icontype>event-icon-danger</icontype>
+        <version>0.7.19</version>
+        <side>on-left</side>
+        <person>Hafidz dan Wibi</person>
+        <date></date>
+        <caption>iPad</caption>
+        <story><![CDATA[
+Form untuk lupa password melebar ke kanan jika dilihat dari iPad.
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-gears</icon>
+        <icontype>event-icon-testing</icontype>
+        <version>0.7.18</version>
+        <side>on-left</side>
+        <person>Vijay</person>
+        <date></date>
+        <caption>Image Picker</caption>
+        <progress>100</progress>
+        <testtype>unit</testtype>
+        <story><![CDATA[
+        <h4>Request</h4>
+        <pre><a href="http://qranafunstuff.web.id/admin/product.php?cmd=test_image" target="_blank">http://qranafunstuff.web.id/admin/product.php?cmd=test_image</a></pre>
+
+        <h4>Response</h4>
+       Daftar thumbnail dari foto-foto yang telah disedot dari Flickr dan dimasukkan ke tabel lokal.
+      ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-edit</icon>
+        <icontype>event-icon-primary</icontype>
+        <version>0.7.17</version>
+        <side>on-left</side>
+        <person>Wibi</person>
+        <progress>20</progress>
+        <testtype>weight</testtype>
+        <caption>Image Picker</caption>
+        <story><![CDATA[
+Menampilkan image picker yang isinya dibaca dari tabel Flickr
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-gears</icon>
+        <icontype>event-icon-testing</icontype>
+        <version>0.7.16</version>
+        <side>on-left</side>
+        <person>Hafidz</person>
+        <date></date>
+        <caption>SQL</caption>
+        <progress>100</progress>
+        <testtype>unit</testtype>
+        <story><![CDATA[
+        <h4>Request</h4>
+        <pre><a href="http://qranafunstuff.web.id/admin/flickr.php?cmd=test_sql&table=image" target="_blank">http://qranafunstuff.web.id/admin/flickr.php?cmd=test_sql&table=image</a></pre>
+        <pre><a href="http://qranafunstuff.web.id/admin/product.php?cmd=test_sql&table=category" target="_blank">http://qranafunstuff.web.id/admin/product.php?cmd=test_sql&table=category</a></pre>
+        <h4>Response</h4>
+       Menampilkan dump struktur tabel dari tabel yang diberikan.
+      ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-edit</icon>
+        <icontype>event-icon-primary</icontype>
+        <version>0.7.15</version>
+        <side>on-left</side>
+        <person>Wibi</person>
+        <progress>20</progress>
+        <testtype>weight</testtype>
+        <caption>SQL</caption>
+        <story><![CDATA[
+Merancang tabel untuk Order: category dan image.
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-gears</icon>
+        <icontype>event-icon-testing</icontype>
+        <version>0.7.14</version>
+        <side>on-left</side>
+        <person>Adhiawan</person>
+        <date></date>
+        <caption>Admin Image Page</caption>
+        <progress>10</progress>
+        <testtype>unit</testtype>
+        <story><![CDATA[
+        <h4>Request</h4>
+        <pre><a href="http://qranafunstuff.web.id/admin/flickr.php" target="_blank">http://qranafunstuff.web.id/admin/flickr.php</a></pre> 
+        <pre><a href="http://qranafunstuff.web.id/admin/flickr.php?page=2" target="_blank">http://qranafunstuff.web.id/admin/flickr.php?page=2</a></pre> 
+        <h4>Response</h4>
+        Tampil galeri dengan foto-foto yang dibaca dari API Flickr dengan tag <b>qranafunstuff</b>. Ganti angka dalam <i>querystring</i> page untuk membuka halaman tertentu sesuai angka yang dimasukkan.
+      ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-edit</icon>
+        <icontype>event-icon-primary</icontype>
+        <version>0.7.13</version>
+        <side>on-left</side>
+        <person>Wibi</person>
+        <progress>10</progress>
+        <testtype>weight</testtype>
+        <caption>Admin Image Page</caption>
+        <story><![CDATA[
+        Menampilkan foto-foto dari Flickr pada halaman Admin Image
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-gears</icon>
+        <icontype>event-icon-testing</icontype>
+        <version>0.7.12</version>
+        <side>on-left</side>
+        <person>Hafidz</person>
+        <date></date>
+        <caption>Flickr</caption>
+        <progress>10</progress>
+        <testtype>unit</testtype>
+        <story><![CDATA[
+        <h4>Request</h4>
+        <pre><a href="https://www.flickr.com/search/?tags=qranafunstuff" target="_blank">https://www.flickr.com/search/?tags=qranafunstuff</a></pre> 
+        <h4>Response</h4>
+        Tampil galeri foto-foto yang diupload oleh Vijay dengan tag <b>qranafunstuff</b>
+      ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-edit</icon>
+        <icontype>event-icon-primary</icontype>
+        <version>0.7.11</version>
+        <side>on-left</side>
+        <person>Vijay</person>
+        <progress>100</progress>
+        <testtype>weight</testtype>
+        <caption>Flickr</caption>
+        <story><![CDATA[
+        Upload foto-foto product ke Flickr dengan tag <b>qranafunstuff</b>
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-gears</icon>
+        <icontype>event-icon-testing</icontype>
+        <version>0.7.10</version>
+        <side>on-left</side>
+        <person>Vijay</person>
+        <date></date>
+        <caption>Admin Product Del</caption>
+        <progress>100</progress>
+        <testtype>function</testtype>
+        <story><![CDATA[
+        <h4>Request</h4>
+        Login terlebih dahulu, kemudian buka halaman yang berisi produk:
+        <pre><a href="http://qranafunstuff.web.id/admin/product.php" target="_blank">http://qranafunstuff.web.id/admin/product.php</a></pre>       
+        <h4>Response</h4>
+        Jika belum login maka akan muncul error_message NotLogin. Jika sudah login maka akan tampil daftar produk, lalu klik icon bak sampah, akan muncul box konfirmasi. Klik tombol Yes maka akan tampil daftar produk tanpa produk yang dihapus tadi
+        <h4>Sequence</h4>
+<div class=wsd wsd_style="modern-blue"><pre>
+User->System: click product_id
+alt success
+    System->User: confirmation box
+else failed
+    System->User: error message box
+end
+alt success
+    User->System: click Yes
+    note right of System
+        delete
+        product
+    end note
+else failed
+    User->System: click Cancel
+    System->User: close box
+end
+    System->User: redirect
+    note right of System: refresh
+</pre></div>
+      ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-edit</icon>
+        <icontype>event-icon-primary</icontype>
+        <version>0.7.9</version>
+        <side>on-left</side>
+        <person>Hafidz</person>
+        <progress>50</progress>
+        <testtype>weight</testtype>
+        <caption>Admin Product Del</caption>
+        <story><![CDATA[
+Bahasa SQL yang digunakan di sini adalah bahasa yang telah diabstraksikan sedikit untuk menyederhanakan penulisan. SQL yang sebenarnya dapat lebih rumit dari yang digunakan di sini.
+        <h4>Flow</h4>
+        <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>No</th>
+                <th>Case/View</th>
+                <th>Function</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>GET: product_del</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>&nbsp;</td>
+                <td>SELECT * FROM product WHERE product_id=$product_id</td>
+            </tr>
+            <tr>
+                <td>3a</td>
+                <td align="right"><i>null</i></td>
+                <td>Error: NotFound</td>
+            </tr>          
+            <tr>
+                <td>3b</td>
+                <td align="right"><i>product_id</i></td>
+                <td>view/product/del_confirm_ajax</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>POST: Yes</td>
+                <td><i>product_id</i></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>&nbsp;</td>
+                <td>DELETE FROM product WHERE product_id=$product_id</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td align="right">&nbsp;</td>
+                <td>view/product/del_success</td>
+            </tr>
+        </tbody>
+        </table>
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-gears</icon>
+        <icontype>event-icon-testing</icontype>
+        <version>0.7.8</version>
+        <side>on-left</side>
+        <person>Vijay</person>
+        <date></date>
+        <caption>Admin Product View</caption>
+        <progress>100</progress>
+        <testtype>function</testtype>
+        <story><![CDATA[
+        <h4>Request</h4>
+        Login terlebih dahulu, kemudian buka halaman yang berisi produk:
+        <pre><a href="http://qranafunstuff.web.id/admin/product.php?cmd=detail&product_id=1" target="_blank">http://qranafunstuff.web.id/admin/product.php?cmd=detail&product_id=1</a></pre>       
+        Ganti product_id dengan angka yang berbeda.
+        <h4>Response</h4>
+        Jika belum login maka akan muncul error_message NotLogin. Jika sudah login maka akan tampil halaman detil produk. 
+        <h4>Sequence</h4>
+<div class=wsd wsd_style="modern-blue"><pre>
+User->System: click product_id
+alt success
+    System->User: product detail
+else failed
+    System->User: error message
+end
+</pre></div>
+      ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-edit</icon>
+        <icontype>event-icon-primary</icontype>
+        <version>0.7.7</version>
+        <side>on-left</side>
+        <person>Hafidz</person>
+        <progress>50</progress>
+        <testtype>weight</testtype>
+        <caption>Admin Product View</caption>
+        <story><![CDATA[
+Bahasa SQL yang digunakan di sini adalah bahasa yang telah diabstraksikan sedikit untuk menyederhanakan penulisan. SQL yang sebenarnya dapat lebih rumit dari yang digunakan di sini.
+        <h4>Flow</h4>
+        <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>No</th>
+                <th>Case/View</th>
+                <th>Function</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>product_view</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>&nbsp;</td>
+                <td>SELECT * FROM product WHERE product_id=$product_id</td>
+            </tr>
+            <tr>
+                <td>3a</td>
+                <td align="right"><i>null</i></td>
+                <td>Error: NotFound</td>
+            </tr>          
+            <tr>
+                <td>3b</td>
+                <td align="right"><i>product_id</i></td>
+                <td>view/product/detail</td>
+            </tr>
+        </tbody>
+        </table>
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-gears</icon>
+        <icontype>event-icon-testing</icontype>
+        <version>0.7.6</version>
+        <side>on-left</side>
+        <person>Vijay</person>
+        <date></date>
+        <caption>Logged-in Admin Page</caption>
+        <progress>100</progress>
+        <testtype>unit</testtype>
+        <story><![CDATA[
+        <h4>Request</h4>
+        Login terlebih dahulu, kemudian buka halaman:
+        <pre><a href="http://qranafunstuff.web.id/admin/" target="_blank">http://qranafunstuff.web.id/admin/</a></pre> 
+        Logout lalu login kembali
+        <pre><a href="http://qranafunstuff.web.id/admin/product.php" target="_blank">http://qranafunstuff.web.id/admin/product.php</a></pre> 
+        <h4>Response</h4>
+        Jika belum login maka akan diredirect ke halaman /login.php. Jika sudah login maka akan tampil halaman admin dengan nama user yang login di kanan atas. Setelah itu logout maka akan diredirect ke halaman Home. Untuk skenario kedua pada halaman Product akan tampil daftar semua produk.
+      ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-edit</icon>
+        <icontype>event-icon-primary</icontype>
+        <version>0.7.5</version>
+        <side>on-left</side>
+        <person>Hafidz</person>
+        <progress>25</progress>
+        <testtype>weight</testtype>
+        <caption>Logged-in Admin Page</caption>
+        <story><![CDATA[
+        <h4>Interface</h4>
+        Menampilkan nama pengguna di halaman admin berdasarkan user yang sedang logged-id.
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-smile-o</icon>
+        <icontype>event-icon-primary</icontype>
+        <version>0.7.4</version>
+        <side>on-right</side>
+        <person>Indu</person>
+        <date></date>
+        <caption>User Story: Admin Product Page</caption>
+        <story><![CDATA[
+Sebagai penjual yang telah login dan mendapat cukup privilege untuk mengelola produk sehingga dapat membuat produk dan mengatur bagaimana produk tersebut tampil di halaman Home.
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-gears</icon>
+        <icontype>event-icon-testing</icontype>
+        <version>0.7.3</version>
+        <side>on-left</side>
+        <person>Vijay</person>
+        <date></date>
+        <caption>Add Cart Flow</caption>
+        <progress>100</progress>
+        <testtype>function</testtype>
+        <story><![CDATA[
+        <h4>Request</h4>
+        Login terlebih dahulu, kemudian buka halaman yang berisi produk:
+        <pre><a href="http://qranafunstuff.web.id/index.php" target="_blank">http://qranafunstuff.web.id/index.php</a></pre> 
+        <pre><a href="http://qranafunstuff.web.id/test.php?cmd=products&view=detail&product_id=1" target="_blank">http://qranafunstuff.web.id/test.php?cmd=products&view=detail&product_id=1</a></pre>       
+        <pre><a href="http://qranafunstuff.web.id/test.php?cmd=products&view=category_list&cat_id=1" target="_blank">http://qranafunstuff.web.id/test.php?cmd=products&view=category_list&cat_id=1</a></pre>
+        <pre><a href="http://qranafunstuff.web.id/test.php?cmd=products&view=category_grid&cat_id=1" target="_blank">http://qranafunstuff.web.id/test.php?cmd=products&view=category_grid&cat_id=1</a></pre>
+        Logout dari satu akun kemudian login kembali dengan akun yang berbeda.
+        <h4>Response</h4>
+        Jika belum login maka akan muncul error_message NotLogin. Jika sudah login maka akan tampil halaman fullpage Shopping Cart Page dengan isi produk-produk dengan order_id yang diambil dari account_id user yang logged-id. Setelah logout dan login kembali dengan user yang berbeda maka Shopping Cart akan menampilkan isi yang berbeda sesuai dengan order_id yang diasosiasikan dengan account_id yang logged-in.
+        <h4>Sequence</h4>
+<div class=wsd wsd_style="modern-blue"><pre>
+User->System: Click Add to Cart
+alt success
+    System->User: redirect
+else failed
+    System->User: error message
+end
+</pre></div>
+      ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-edit</icon>
+        <icontype>event-icon-primary</icontype>
+        <version>0.7.2</version>
+        <side>on-left</side>
+        <person>Hafidz</person>
+        <progress>50</progress>
+        <testtype>weight</testtype>
+        <caption>Add Cart Flow</caption>
+        <story><![CDATA[
+Bahasa SQL yang digunakan di sini adalah bahasa yang telah diabstraksikan sedikit untuk menyederhanakan penulisan. SQL yang sebenarnya dapat lebih rumit dari yang digunakan di sini.
+        <h4>Flow</h4>
+        <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>No</th>
+                <th>Case/View</th>
+                <th>Function</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>cartadd</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>&nbsp;</td>
+                <td>SELECT order_id FROM order WHERE account_id=<session> && status='open'</td>
+            </tr>
+            <tr>
+                <td>3a</td>
+                <td align="right"><i>null</i></td>
+                <td>INSERT INTO order (account_id,status,price) VALUES ([session],'open',0)</td>
+            </tr>            
+            <tr>
+                <td>3b</td>
+                <td align="right"><i>order_id</i></td>
+                <td>INSERT INTO cart (order_id,product_id,quantity) VALUES ([order_id],[product_id],1)</td>
+            </tr>
+            <tr>
+                <td>4a</td>
+                <td>Update Shopping Cart Box</td>
+                <td><i>success</i></td>
+            </tr>
+            <tr>
+                <td>4b</td>
+                <td>Error Notification Box</td>
+                <td><i>failed</i>: <i>NotFound</i></td>
+            </tr>
+        </tbody>
+        </table>
+        ]]></story>
+	</sprint>
+	<sprint>
+        <icon>fa fa-smile-o</icon>
+        <icontype>event-icon-success</icontype>
+        <version>0.7.1</version>
+        <side>on-left</side>
+        <person>Wibi</person>
+        <date>13-04-2015</date>
+        <caption>Sprint Goal</caption>
+        <story><![CDATA[
+Sistem memiliki admin untuk penjual mengelola produk-produknya, mulai dari membuat daftar produk, mengisi informasi detil barang seperti harga, nama dan keterangan berikut gambar-gambarnya.
+        ]]></story>
+	</sprint>  
+</backlog>

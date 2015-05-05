@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+<member>
+    <account_id>1</account_id>
+    <status>active</status>
+    <fullname>Wibisono Sastrodiwiryo </fullname>
+    <facebook>sastrodiwiryo</facebook>
+    <privilege controller="/login.php" />
+    <privilege controller="/index.php" />
+    <privilege controller="/admin/index.php" />
+    <privilege controller="/admin/product.php">
+        <case>test_sql</case>
+        <case>test_image</case>
+    </privilege>
+    <joined>20 Nov 2008</joined>
+</member>
+<member> 
+    <account_id>5</account_id> 
+    <status>active</status> 
+    <fullname>Hafidz Muttaqin </fullname> 
+    <facebook>hav142</facebook> 
+    <privilege controller="/index.php" /> 
+    <privilege controller="/login.php" /> 
+    <privilege controller="/admin/product.php"> 
+        <case>test_sql</case> 
+        <case>test_image</case> 
+        <case>edit</case> 
+        <case>update</case> 
+        <case>add</case> 
+        <case>remove</case> 
+    </privilege> 
+    <joined>12 Jul 2011</joined> 
+</member>
+<member>
+	<account_id>7</account_id>
+	<status>active</status>
+	<fullname>Adhiawan Soegiharto </fullname>
+	<facebook>awan.soegi</facebook>
+	<privilege controller="/index.php" />
+	<privilege controller="/login.php" />
+	<privilege controller="/admin/product.php">
+		<case>test_sql</case>
+		<case>test_image</case>
+	</privilege>
+	<joined>20 Sep 2011</joined>
+</member>
+<member>
+	<account_id>10077</account_id>
+	<status>active</status>
+	<fullname>Seno Vijay </fullname>
+	<facebook>seno.vijay</facebook>
+	<webmaster>1</webmaster>
+	<joined>9 Apr 2015</joined>
+</member>
+</data>
